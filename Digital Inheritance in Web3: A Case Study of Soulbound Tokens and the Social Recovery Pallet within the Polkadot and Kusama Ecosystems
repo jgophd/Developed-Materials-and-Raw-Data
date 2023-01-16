@@ -1,0 +1,480 @@
+Digital Inheritance in Web3: A Case Study of Soulbound Tokens and the Social Recovery Pallet within the Polkadot and Kusama Ecosystems
+
+ABSTRACT
+In recent years, discussions centered around digital inheritance have increased among social media users and across blockchain ecosystems. As a result, digital assets such as social media content, cryptocurrencies, and non-fungible tokens have become increasingly valuable and widespread, leading to the need for clear and secure mechanisms for transferring these assets upon the testator’s death or incapacitation. This study proposes a framework for digital inheritance using soulbound tokens and the social recovery pallet as a use case in the Polkadot and Kusama blockchain networks. The findings discussed within this study suggest that while soulbound tokens and the social recovery pallet offer a promising solution for creating a digital inheritance plan, the findings also raise important considerations for testators, digital executors, and developers. While further research is needed to fully understand the potential impacts and risks of other technologies, such as artificial intelligence and quantum computing, this study provides a primer for users to begin planning a digital inheritance strategy and for developers to develop a more intuitive solution.
+
+INTRODUCTION
+The notion of digital inheritance has gained increased prominence in recent years due to the rise of digital technology and the ubiquity of digital assets in the lives of individuals and families. In addition, with the growth of the Internet of Things (IoT), more and more devices are now storing personal data and assets, making it increasingly necessary to consider what will happen to these digital assets upon one’s death. Digital assets refer to any property that exists in digital form. Examples of digital assets include online accounts (such as email, social media, and banking accounts), digital currency, non-fungible tokens (NFTs), and digital media such as photos, videos, and music [1].
+In the past, paper documents and tangible, physical assets were the primary legal instruments for an inheritance, and digital assets have often been excluded [2]. Additionally, laws highlighting digital assets upon death vary among states, countries, and even service providers such as Facebook, LinkedIn, YouTube, and Google. Conventional digital assets are often stored on third-party servers or in the cloud, making them sometimes difficult to track and transfer. Google, Apple, and Microsoft have all developed tools to allow users to designate a digital executor who can access accounts in the event of one’s death [3].
+As decentralized digital assets such as cryptocurrencies and non-fungible tokens (NFTs) have begun to emerge in estate planning discussions, policymakers and practitioners are sometimes unclear on how to distribute these digital assets to a testator’s heirs. In this study, we propose a digital inheritance plan that testators can use as a framework when working with the executors of their estate to manage digital assets. In the remainder of the section, we will discuss the motivation and potential contributions in conducting this research.
+ The remainder of the study is organized as follows: Section II introduces researchers to terms and topics that will be referred to throughout the study. Section III reviews the parties or entities involved in the digital inheritance process. Section IV reviews the self-sovereign identity (SSI) principles that serve as the foundation of the Web3 space. Section V expands on the SSI principles with Identity Schemes developed within the blockchain and Web3 space. Section VI introduces researchers to soulbound tokens (SBTs), while Section VII highlights the developments of social recovery wallets. Next, Section VIII takes a look at the current digital inheritance landscape across a number of blockchain ecosystems. 
+The focus of the study is included in Section XI, where the social recovery pallet within the Polkadot and Kusama ecosystems is introduced. Finally, Section X offers future research considerations based on the findings, and the study concludes with the acknowledgment and closing thoughts with Sections XI and XII.
+MOTIVATION
+The primary motivation for writing on digital inheritance is to ensure that individuals, organizations, and families are aware of the importance of digital inheritance and that appropriate plans can be put in place for the smooth transfer of digital assets upon death or incapacitation. While the topic of digital inheritance in the area of social media has been studied in legal and technological contexts, little research has been performed in the areas of NFTs and cryptocurrencies [4]. Digital inheritance is a growing concern for many individuals in the digital age as our lives become increasingly intertwined with digital technologies. This has resulted in a plethora of digital assets, such as online accounts, emails, and digital photos, which can be lost after a person’s death. 
+In an often discussed topic regarding estate planning and digital inheritance, banking heir Matthew Mellon saw his US$2 million investment in Ripple (XRP) increase to approximately US$1 billion at the peak of the cryptocurrency market [5]. After unexpectedly passing away in 2019, Mellon’s heirs would be in line to inherit this fortune in traditional law. The issue arose when it was uncovered that Mellon did not share his private keys with anyone and kept them on devices across the United States [6]. In an uncommon scenario, attorneys discovered that Ripple, the issuer of XRP, managed Mellon’s assets due to Mellon’s contribution to the project's early days. Although the attorneys could recover the assets, an agreement between Ripple and Mellon prevented the attorney from selling all of the assets at once, leading to the investment losing almost two-thirds of its value [7]. In this case, if Mellon had a plan in place for his digital assets, the loss in the value of the assets may have been prevented.
+Additionally, in a 2020 study by the Cremation Institute [8], 89% of cryptocurrency investors worry about dying with their assets, while only 23% have a documented plan. Of that percentage, only 7% have created a will that includes cryptocurrencies. In other studies, roughly 60% of Americans and 50% of Canadians do not have a conventional will, which could be higher in other parts of the world [9],[10]. With these findings, what are the reasons why so many individuals neglect to ensure that their assets are appropriately allocated to the rightful heirs and ensure their legacy is remembered?
+In assessing why many individuals do not create a will could be due to the fear of death. In one study on SBTs, Chaffer and Goldston [11] posited that the terror management theory (TMT) may alleviate the fear of death. TMT is a social and evolutionary psychology model that explains how people protect themselves against thoughts of death [12]. With the evolution of NFTs within the Web3 space, individuals can develop a digital legacy with SBTs, and users may be able to create an immortal SSI for individuals with concerns about death.
+CONTRIBUTIONS
+Contributions to Individual Estate Planning
+Rapid global digitalization has altered how individuals communicate, do business, and store information. As a result, the digital world has spawned a new category of assets that should be accounted for in estate planning strategies. As more of an individual's life exists in digital form, the subject of how to handle digital assets has become crucial. Traditional estate planning executors typically account for the allocation of tangible property, but digital inheritance is sometimes overlooked.
+Digital inheritance is a complex issue with far-reaching implications. Individuals and their advisors must understand the importance of digital inheritance and the need for updated estate planning physical and digital documents. By creating a plan for digital assets, individuals and their families can secure digital property transfer and protect their legacy in the digital age.
+
+Contributions to the Legal Practice
+The legal complexities of digital assets can make digital inheritance a daunting task. Estate planning documents should account for the various laws governing digital property. For example, the Stored Communications Act prohibits service providers from disclosing the contents of electronic communications without the account holder's consent [13]. In addition, the laws governing digital assets vary from state to state. Some states within the United States have adopted the Uniform Electronic Wills Act, which allows individuals to create digital wills that are legally binding [14]. Other states have adopted the Revised Uniform Fiduciary Access to Digital Assets Act, which allows fiduciaries to access and manage digital assets on behalf of an estate [15]. With the differences in laws and regulations centered around digital inheritance, individuals and their advisors need to understand the applicable laws in their jurisdiction when creating an estate plan.
+
+PRELIMINARIES
+In this section, terms used throughout this study are introduced.
+
+BLOCKCHAIN
+Blockchain is a distributed, immutable, and cryptographically secure digital ledger that records transactions across a network of computers in a secure and tamper-proof way [16]. Through consensus protocols such as proof of work and proof of stake, nodes - or individuals - across blockchain networks validate and record transactions on the ledger, enabling individuals and businesses to streamline processes, increase transparency, and decrease costs.
+POLKADOT
+Polkadot is a blockchain-based protocol that enables the creation and interoperability of multiple blockchains. Known as a Layer Zero protocol, Polkadot's primary feature is the ability to enable cross-chain communication through cross-consensus and cross-chain messaging (XCM) between different blockchains [17]. The Polkadot blockchain is made up of two main components: a Relay Chain and Parachains. The Relay Chain serves as the network's central validating chain, ensuring consensus and governance. Parachains are independent blockchains connected to the Relay Chain and can run applications written in the Polkadot runtime [18]. The Polkadot protocol is intended to be a platform for Web 3.0 application development and provide an environment for developing secure, decentralized applications (dapps).
+KUSAMA
+Kusama is an open-source, permissionless, proof-of-stake-based blockchain network. Kusama is modeled after the Polkadot blockchain and provides users with a platform for creating and deploying their dapps. Known as Polkadot's canary network, Kusama allows users to experiment with new technologies, such as governance and on-chain upgrades, without the risk of major network disruptions [19]. Like Polkadot, the network offers scalability, security, and interoperability between blockchains [20]. As a result, many projects deploy on Kusama, gain user feedback through usage, and make adjustments before migrating to the Polkadot blockchain network.
+SMART CONTRACTS
+Smart contracts can be referred to as agreements that can be automatically executed when certain criteria are satisfied on blockchain-based platforms. The provisions of the agreement cannot be amended or altered once they have been agreed upon since they are self-executing, secure, and unchangeable [21]. A range of transactions, including financial and legal agreements, can be facilitated and automated through the use of smart contracts.
+
+SOULBOUND TOKENS
+SBTs are cryptographic tokens permanently tied to a specific user or device. SBTs are typically used to represent ownership and are commonly associated with blockchain-based applications. SBTs are created using cryptographic algorithms, ensuring that no other user or device can access the token or the associated data [22]. SBTs are also resistant to replication, which further enhances the security of the token.
+NON-FUNGIBLE TOKENS
+NFTs are cryptographic tokens that are used to represent digital assets with unique characteristics that can be used to authenticate and track ownership and transfer of digital assets. They are distinct from fungible tokens, representing a common unit of value that can be exchanged on a blockchain. Unlike fungible tokens, each NFT is cryptographically unique and can be used to track and transfer ownership of digital assets [23]. NFTs are held and validated on a blockchain and can represent collectibles, digital artwork, game items, real estate, or digital identities.
+CRYPTOCURRENCIES
+Used as a form of utility across a number of blockchain protocols, cryptocurrencies are digital assets that are created and exchanged using cryptography and distributed ledger technology. These decentralized digital assets have no connection to any central bank or government and rely on peer-to-peer networks for transaction transfer and validation [24]. Cryptocurrencies are designed to be secure, with anonymous and irreversible transactions that eliminate the need for third-party intermediaries such as banks or other financial institutions. Although Central Bank Digital Currencies (CBDCs) in jurisdictions use stablecoins - a class of cryptocurrency - the reference to cryptocurrencies in this study will be focused on decentralized cryptocurrencies.
+SOCIAL RECOVERY
+The act of social recovery on blockchain protocols refers to the ability for users to recover assets from an account in the event that they lose their private keys or forget their password. Through cryptographic protection, social recovery wallets can provide a secure and efficient way to restore users’ identities, access, and other important data [25]. Additionally, social recovery in blockchain can allow for the re-establishment of trust between users and their respective networks and provide a secure way for users to store and manage their personal data and assets.
+SELF-SOVEREIGN IDENTITY 
+SSI is a decentralized authentication system that enables individuals to securely, privately, and autonomously control their personal identity data. SSI is based on the principles of self-ownership, portability, and control, which means that individuals own and manage their information and can move it between service providers without requiring a centralized entity to act as an intermediary [26]. By giving individuals more control over their personal data, SSI can be seen as a way to help individuals gain access to services, protect their privacy, and combat identity theft.
+MULTI-SIGNATURE
+Multi-signature (multi-sig) is a cryptographic technique that requires multiple individuals to confirm a transaction through authorized signatures before the transaction is executed. Multi-sig is used across various blockchain-based networks to allow for a more decentralized governance model with fewer points of failure and is also used in various applications such as shared accounts, escrow services, and smart contracts [28]. The multi-sig standard follows the m-of-n ratio - also known as the quorum quotient. For example, a common multi-sig configuration is 3-of-5, which means three private keys - individuals - would have to sign a transaction before it is executed. If a transaction did not receive the required number of signatures from users holding private keys, the transaction would not execute.
+SEED PHRASE
+A seed phrase, also known as a recovery phrase or backup phrase, is a string of words that can be used to regain access to a cryptocurrency wallet. Seed phrases are a method of backing up and securing the private keys that allow access to the wallet's funds, and the order of the words in the phrase must be entered correctly to regain access to the wallet [29]. A seed phrase is typically made up of 12 to 24 words and is generated when the wallet is first created.
+
+ENTITIES
+In traditional inheritance proceedings, several parties are involved in the digital inheritance planning process. Although many parties may remain the same, the entities involved in traditional and digital inheritance planning will be reviewed. 
+THE TESTATOR
+The testator is the individual working with another party to develop a will. For a will to be legally valid, it must be executed by the testator in accordance with the laws of the jurisdiction where the will is being made [30]. This typically involves the testator signing the will in the presence of witnesses, who must also sign the will to validate it. The testator can also appoint guardians for minor children and designate beneficiaries to receive specific assets or a share of the estate. The testator may also include provisions for charitable gifts, trusts, and other arrangements in the will.
+The testator should be very explicit in his or her wishes regarding how they would like for digital assets to be transferred. Based on where the testator is located, there are a number of existing legal provisions governing the transfer of digital assets. For example, The General Data Protection Regulation (GDPR) is the primary legal instrument in Europe that provides individuals with the right to access their personal data and the right to have their data erased upon their death [31]. Although digital assets such as online accounts, emails, and digital photos have been identified in these legal instruments, researchers and legal practitioners have identified gaps within the existing frameworks when attempting to understand the legal provisions centered around digital assets such as cryptocurrencies and NFTs [32]. The legal frameworks regarding digital inheritance will be discussed in greater detail in subsequent sections of this study.
+THE EXECUTOR
+An executor for an estate is a person responsible for carrying out the wishes of a deceased person as outlined in their will in accordance with the law. This includes gathering the deceased's assets, paying any debts, and distributing the remaining assets to the beneficiaries. The executor must also file any necessary paperwork with the court and handle any disputes that may arise.
+For digital assets, this role will remain the same. Although an individual could work with their trustees - or guardians - to have a smart contract executed based on agreed-upon terms, it may be advisable to have a digital executor included in the process [32]. As laws change based on geographical region, legal guidelines give executors the right to access digital assets and require online service providers to provide access to digital assets upon request [4]. They also provide clear guidance on managing digital assets in the event of a death.
+THE TRUSTEE
+The trustee is the individual or entity responsible for managing and administering the assets of a trust. The trustee may be appointed to manage the estate's assets on behalf of the beneficiaries. Working closely with the estate executor, the trustee's role is to act in the beneficiaries best interests and ensure that the trust assets are managed and distributed according to the trust document's terms. There are several different types of trustees that may be appointed to manage an estate, including individual trustees, corporate trustees, and co-trustees [34]. The type of trustee best suited for a particular situation will depend on the size and complexity of the estate, as well as the needs and preferences of the beneficiaries.
+Trustees are sometimes referred to as guardians for solutions that support digital inheritance. The difference between guardians compared to traditional trustees is that guardians can use a multi-sig approach to approve the release of assets upon the testator's death [35]. Multi-sigs can provide an additional layer of privacy and security to both the testator and the guardians [36]. Although the testator can identify the trustees or guardians during the digital inheritance planning process, per the wishes identified by the testator, guardians do not have to know the identities of the other guardians.
+THE BENEFICIARIES
+The beneficiaries of an estate are the individuals who are legally entitled to the testator's assets. Family members are typically included, such as spouses, children, and other close relatives. Friends, charities, and other organizations could also be beneficiaries. The executor of the estate is responsible for ensuring that the assets are distributed in accordance with the deceased's wishes. Beneficiaries may be entitled to a lump sum payment or periodic distributions [37]. Beneficiaries may receive a combination of both in some cases.
+In regards to digital assets, researchers have been looking into the importance of SSI principles for testators further to increase the secure transfer of assets to their beneficiaries. SSI principles provide a framework for digital inheritance, allowing individuals to securely and safely transfer their digital assets without relying on third-party intermediaries [38]. SSI principles involve the use of secure identity layers, effective data privacy, and secure protocols built on distributed ledger technology [39]. These layers ensure that valuable assets are transferred to the verifiable digital identities of the testator’s beneficiaries. 
+
+SSI PRINCIPLES
+Shuaib et al. [40] developed a framework of SSI principles that users should consider when sharing data on the internet. This framework could also be considered when joining a decentralized Web3 ecosystem and developing a digital inheritance strategy. Shuaib et al.’s framework consist of the following principles.
+CONTROL
+The SSI framework is based on the belief that individuals should have control over their digital identity and be able to have full control of their data and digital assets. Many studies have highlighted how centralized entities have changed terms of service policies that enable them to share a user’s primary data and metadata [41], [42]. Guidi [43] identified the potential risks of over three billion social media users regarding the control, security, and safety of their privacy and proposed a decentralized blockchain-based online social network to mitigate current risks. While this could potentially control conventional digital assets such as photos and videos, more valuable assets such as cryptocurrencies and NFTs may require even greater control.
+ACCESS
+Users should be able to access their data at any time easily. In the area of digital inheritance, guardians or trustees should also be able to access a testator's data or assets at any time as well, with a few caveats. To provide an additional layer of security, a testator can choose to delay access to digital assets by setting up an account that could be tied to their social recovery wallet [35]. Based on the number of days determined by the testator, guardians could cancel the transaction if foul play or a potential hack is of concern. 
+TRANSPARENCY
+Transparency is essential for the proper functioning of SSI as it enables individuals to make informed decisions about their personal data and identity information. Without transparency, individuals may not be aware of how their data is being used or shared, and may not have the ability to control or protect their data. One of the main challenges with the transparency of digital assets is the visibility of the assets in one place. As users will have social media passwords, data, and content across various platforms, along with cryptocurrencies and NFTs across a number of different blockchains, it could be difficult to aggregate all of this content into one application. As projects have created dashboards for tracking decentralized finance (DeFi) portfolios across a number of different blockchain networks, the potential to create digital inheritance dashboards to increase the transparency of a user’s digital assets will be reviewed in further detail within the Discussion section of this study.
+PERSISTENCE
+Persistence is a concept based on the idea that an individual’s identity is maintained throughout their lifetime, regardless of changes in personal circumstances. Persistence is a critical element of SSI, as it ensures that the individual's identity is consistently linked to their digital assets, even after death. This ensures that the digital assets can be securely transferred to the designated beneficiaries. 
+Researchers have also mentioned the use of biometric authentication and blockchain technology to ensure that the individual's identity is securely linked to their digital assets [44]. When planning for digital inheritance, an individual could set up biometric authentication for themselves and the executor of their estate to ensure persistence and an additional layer of security for their assets. Given that some studies are theoretical, it is important to consider the legal implications of persistence in the context of digital inheritance and succession planning within one’s geographical region.
+PORTABILITY
+SSI requires that individuals can securely transfer their digital assets to other individuals or entities, as well as the ability to revoke access to their assets. Portability could become complicated for Web2 digital assets are stored in different services and platforms such as YouTube, TikTok, and Instagram. For heirs to access these assets, they must be able to access the same services and platforms that the deceased used. While storing one’s digital identities and passwords across different services and platforms, this ensures that heirs will able to access the digital assets of the deceased.
+INTEROPERABILITY
+Interoperability for SSI will be essential as the decentralized Web3 space continues to expand. Currently, a small number of blockchain networks provide cross-chain communication and the bridging of assets [45]. Layer zero blockchains such as Polkadot, Kusama, and Cosmos have built blockchain networks with cross-chain communication in mind. This communication and transfer of funds primarily occur across blockchains within the network. Although bridges are being developed within these networks to communicate with blockchains such as the Bitcoin network, the Ethereum network, and others such as Avalanche, solutions to aggregate cross-chain assets may need to be considered for solutions such as those being developed for digital inheritance.
+CONSENT
+The principle of consent is based on the idea that individuals should control how their data is used and who can access it. It requires that individuals give explicit consent to any digital data associated with them and have the right to revoke this consent at any time during their life. Although researchers have noted that the scope and coverage are extremely limited [46], regulations have continued to emerge in many countries as policymakers have seen the increased use and monetization of digital assets.
+In the United States, the Revised Uniform Fiduciary Access to Digital Assets Act (RUFADAA) provides a framework for managing digital accounts in the event of death or disability. The act gives executors and trustees access to emails, chats, and direct messages only if the individual explicitly consented [15], [47]. Additionally, under the RUFADAA, centralized entities such as Google and Meta are referred to as custodians of a user’s data and may only provide access to the reasonably necessary information to settle an individual’s estate and cannot provide access to deleted assets.
+EXISTENCE
+Proof of existence is a topic often discussed within the area of social media. As automated accounts or social media bots plague a number of platforms, bots could also pose a potential threat to SSI. Furthermore, as bots have been responsible for attacks on social media platforms, influencing public opinion, and potentially impacting elections through the spread of misinformation [48], [49], proof of existence for all parties included in a digital inheritance plan will be important.
+One way users can demonstrate proof of existence is with SBTs. For example, in reviewing the use cases for SBTs, if the testator, executors, guardians, and beneficiaries had SBTs created by the testator and transferred to the users' wallets, that would be a part of the digital inheritance plan. This process could prove the existence of all users and increase the security of the testator’s digital assets.
+MINIMALIZATION
+Minimalization refers to the idea that individuals should only be required to share the minimum amount of personal data necessary to accomplish a specific task or goal. In the context of SSI, minimalization means that individuals should be able to share only the necessary pieces of information about themselves in order to prove their identity or access certain services rather than having to disclose large amounts of personal data.
+Within decentralized environments, zero-knowledge proofs enable ZKPs users to share a limited amount of information to prove they hold certain information or even one’s identity. ZKPs are a type of cryptographic protocol that enables one person - the prover - to demonstrate to another - the verifier - that they possess specific knowledge or information without disclosing that knowledge or information [50]. ZKPs may become vital for the digital inheritance of testators as they may not want to show all of their digital assets to beneficiaries or guardians but only want to prove that the contents within the account or wallet exist.
+PROTECTION
+Numerous studies centered around social engineering attacks on social media platforms have been performed across various disciplines, such as Business, Marketing, and Computer Science. As the intention of these attacks, in many cases, is for monetary gain, researchers and practitioners have called for additional protections among social media users [51], [52]. To counter these risks, legal and regulatory frameworks such as the General Data Protection Regulation (GDPR) in the European Union have been developed to protect individuals’ data, such as social media accounts, online banking, and cloud storage [53]. However, while dapps can provide anonymity and protection by allowing a user to connect a wallet [43], apps in blockchain networks such as Ethereum, Solana, Polygon, and Polkadot have yet to gain wide adoption among users. 
+For decentralized digital assets such as cryptocurrencies and NFTs, SafeHaven is a project within the VeChain blockchain ecosystem that has added an extra layer of protection for testators by implementing a deadman’s switch [54]. A deadman’s switch keeps assets in a wallet or account safe by allowing the testator to define a period for the application to alert the user to enter authentication information and confirm liveness periodically. If the user fails to enter the authentication information within a certain period, the assets are automatically transferred to the designated beneficiaries.
+
+IDENTITY SCHEMES
+To expand on Shuaib et al.’s [40] SSI principles, Sun et al. [36] identified the following identity schemes users should be aware of as Web3 and the decentralized web continue to evolve.
+PERSONALITY IDENTITY
+Personality Identity is a digital identity model that gives individuals full control over their identity and related information. Personality identity allows users to manage their identity credentials and access their data online without relying on a third-party identity provider, such as a government or corporate entity. This allows users to fully monetize off of their personality identity, compared to the conventional model where corporate entities receive a large percentage of the monetization rewards [55]. With this approach, an identity management system of this type provides users with a high level of privacy and security by allowing them full control over their data and the services that use it.
+
+
+CREDENTIAL IDENTITY
+Credential identity provides a secure way to prove one's identity to other parties online. It is based on the idea that a digital identity is based on an individual's unique attributes, which are securely stored and managed by the individual, and is verifiable by other parties. Therefore, credential Identity allows individuals to create and store digital credentials that are cryptographically secured and can be used to prove qualifications and access services without having to rely on a third party. For example, services such as the POAP and Ethereum Name Service (ENS) have created solutions that prove attendance or participation at events or prove digital assets or credentials are held in a digital wallet the address - in an ENS case - is attached to [56], [57]. 
+REPUTATIONAL IDENTITY
+Reputational Identity for SSI refers to the digital representation of an individual's identity that is built upon their past interactions, digital and physical, and is used to assess an individual's trustworthiness. Also referred to as proof of authority (PoA), blockchain protocols such as VeChain have developed consensus mechanisms around the PoA model [58]. When using the PoA consensus mechanism, nodes - or individuals - must have a reputational identity established and recognized by the network. This reputational identity serves as a means of validating the node's trustworthiness and is a key factor in determining the authority of the node.
+DATA IDENTITY
+Data Identity is a concept in which individuals control their digital identity data, including authentication, access management, and privacy. Projects such as Kilt Protocol provide decentralized identity (DID) tools for users within the Polkadot and Kusama ecosystems [19], [59]. This data is collected and stored in a secure, decentralized digital identity store. This store is used to verify the identity of users and enable other digital activities, such as secure transactions and digital signing.
+
+A NEW USE CASE FOR NON-FUNGIBLE TOKENS
+Non-fungible tokens (NFTs) are digital assets that can be used to represent ownership of real or virtual items. NFTs are unique, meaning each token is distinct and cannot be replaced with another. This makes NFTs different from traditional digital assets such as Bitcoin, Ethereum, and Polkadot tokens, which are interchangeable and divisible. NFTs became popular in 2021 and 2022 due to their ability to enable the monetization of digital items such as art, music, and gaming assets [31]. With blockchain infrastructure technology underlying it, an NFT guarantees a secure and immutable record of ownership for the asset being represented. NFTs can be viewed as a use case for blockchain that has enabled digital assets to be monetized and traded securely and transparently, paving the way for a new form of digital asset ownership.
+As cryptocurrencies, decentralized finance, and NFTs have allowed users to amass wealth due to the ability to transfer digital assets, there may also be a use case for non-transferrable assets within the Web3 space. For example, within the Web2 gaming space, namely in World of Warcraft (WoW), soulbound items can be collected in-game but cannot be transferred to another player. Soulbound items are valuable because they give players access to exclusive items and provide additional benefits, such as increased experience or bonuses, when used in certain activities. However, with WoW continuing to bring in over a million daily active users (DAUs) in 2022 [60], how can the concept of soulbound items transfer over to the Web3 world?
+In an article called Soulbound, Buterin [61] introduced the concept of SBTs for governance mechanisms across blockchain protocols. Current state, because users can go onto centralized exchanges (CEXs) or decentralized exchanges (DEXs) to purchase governance tokens, parties that are driven by purposes potentially detrimental to the protocol could concentrate interests away from the ecosystem’s community, defeating the purpose of the decentralized nature of blockchain and Web3. Furthermore, with the introduction of SBTs, similar to soulbound items in Web2 gaming, SBTs would be non-transferable. While it can be argued that a user could sell an entire wallet to another user, making governance tokens as SBTs may be a topic for further research.
+With governance tokens providing one use case for SBTs, another use case for non-cryptocurrency users may be for proof of identity. Two projects using a de-facto soulbound framework within the Ethereum ecosystem are BrightID and Proof of Humanity [36]. To prove that the owners of accounts are indeed actual individuals, in an SBT model, the token identifiers are not transferrable, given that on-chain assets are soulbound to each verified individual [61]. As Web3 looks to introduce SSI to the masses, these tools' virtual asset service providers (VASPs) may consider an SBT framework.
+As previously mentioned, SSI is a foundational tenant of Web3 that allows users to have complete control over their digital identities. By leveraging blockchain technology, SSI can provide access to services and applications in a more efficient manner, as well as enable improved trust between people, organizations, and governments around the world [62]. Similar to how NFTs onboard new users into the blockchain and Web3 spaces, SSI with SBTs could encourage more users to enter various blockchain ecosystems.
+ADDITIONAL USE CASES FOR SOULBOUND TOKENS
+Upon the release of Buterin’s article Soulbound, projects across Ethereum and other blockchain protocols began to develop solutions for SBTs. Within the United States, Wyoming recognized decentralized autonomous organizations (DAOs) as separate legal entities through a supplement to the law governing limited liability companies (LLCs) in 2021 [63]. This led to a number of projects registering as DAOs in 2021 and 2022. DAOs such as Reputation DAO leveraged SBTs as reputation systems for utilities such as credit scores, proof of identity in the play-and-earn space, and proof of identity for council members across various ecosystems [36]. In taking this approach with SBTs, blockchain can potentially provide further transparency to the on-chain behavior of users.
+In another example of how SBTs can cross over into the Web3 space, RMRK, a project within the Polkadot and Kusama ecosystems, created an SBT called Soulbound 2.0 (SBT2). Developed with the metaverse and GameFi in mind, RMRK is another project that created a reputation-based SBT [64]. As RMRK’s SBT2 will gain attributes based on how long a user plays a blockchain-based game or stays in a metaverse, SBT2s can be viewed as dynamic SBTs. Phala Network, another project within the Polkadot and Kusama ecosystems, leveraged RMRK’s SBT2 to create an SBT within their PhalaWorld metaverse. Using a Spirit, any user can obtain an SBT that can only be leveled up by performing activities throughout the Phala ecosystem. By demonstrating behaviors such as participating in on-chain activities, being a community advocate on Web2 social media platforms, contributing to the community from a technical perspective, or staking PHA - the native token for the Phala ecosystem, SBTs can only evolve with user interaction.
+Within the Binance ecosystem, the Binance Account Bound (BAB) SBT was created for Binance users that completed their know your customer (KYC) verification [36]. Given that Binance is a CEX that holds a number of assets across a number of wallets, could SBTs provide a use case for know-your-exchange (KYX) verification? With the collapse of FTX in 2022, users could track the suspicious activity of a wallet holding large amounts of FTT tokens - the native token of the FTX exchange. If CEXs such as Binance leverage the BAB SBT they created to provide increased transparency, other CEXs, DAOs, and protocols may have to follow similar processes to develop standards across the Web3 landscape.
+A DECENTRALIZED SOCIETY WITH SOULBOUND TOKENS
+In considering use cases for a number of industries, Weyl et al. [22] proposed that SBTs could potentially create the foundation for a decentralized society (DeSoc). Referred to as an extended resume, if users leveraged wallets as SBTs, these tools could provide the credentials and commitments to conduct a variety of activities in a decentralized fashion. Although decentralized finance activities are currently performed across a number of blockchain ecosystems, methods to track a user’s credit score or repayment history do not currently exist. SBTs could provide a way to unlock lending opportunities for individuals and organizations that do not have the financial history or assets traditional financial institutions recognize. For example, if a user owns cryptocurrencies or NFTs, if they hold those assets in an SBT-based wallet, with the user's permission, the wallet could show the payment history and the ‘crypto credit score’ to the lender. 
+Tying SBTs back to extended resumes, college degrees, certifications, and transcripts could also be on-chain as SBTs. Given that degrees, certifications, and transcripts are soulbound in the Web2 world, employers and academic institutions could leverage SBTs to confirm that the contents of an applicant's resume are valid. Additionally, if an employer would want to conduct a reference check, the reference’s addresses could be included in the SBT, where attestations could be performed on-chain.
+As discussed in Section IV's Existence and Minimization areas, SBTs will play a key role in digital inheritance planning. While SBTs can be created for all entities that are a part of the executor’s will, ZKPs may also be used in conjunction with SBTs to ensure that no one can manipulate the system [65]. In addition, as SBTs will become another foundational piece in the digital inheritance framework, protocols and networks outside of those previously mentioned may consider SBTs to provide privacy and security to their users as they build out their digital inheritance plans.
+
+SOCIAL RECOVERY WALLETS AND ACCOUNTS
+In an effort to work toward SSI in the digital age, intuitive solutions must be created for non-technical users. Given that the Web3 future will be built on dapps, if a user loses their password or seed phrase, no intermediary or centralized entity can be contacted to recover a user’s password. Projects have created social recovery wallets to mitigate the risk of lost assets. Social recovery wallets are smart contract wallets where a user’s assets will be within that smart contract [35]. A signing key protects access to the smart contract, and that signing key is used to approve transactions or the transfer of assets. If a user forgets his or her password, trustees - or guardians in this case - can come together to recover the account.
+Within the Ethereum ecosystem, Argent and Loopring have developed multi-sig social recovery wallet solutions where a user can set up between three to seven guardians they can reach out to in order to recover an account [35]. As new users entering the Web3 space may forget his or her wallet password or seed phrase, this function may be a helpful tool. Additionally, as passwords, pictures, video files, and other Web2-native digital assets could be stored in a social recovery wallet through the use of decentralized storage applications such as Arweave, Filecoin, or The InterPlanetary File System (IPFS), social recovery wallets may provide a more secure solution for assets during one’s life. Building upon the utility of social recovery wallets, a use case for social recovery wallets could be explored for users performing digital inheritance planning activities.
+
+THE EXISTING DIGITAL INHERITANCE LANDSCAPE
+With more individuals understanding the importance of securing their digital assets, more projects and solutions have entered the market. Organizations have created solutions to help individuals create digital estate plans and transfer digital assets after death. Similar to traditional executors of a will or estate, a digital executor is responsible for an individual’s digital assets [33]. The digital executor of the estate would identify and catalog digital assets, work with the individual to create a digital will, and manage the transfer of digital property [66]. This ensures that digital assets remain safe and accessible even after the account holder has passed away.
+As researchers have analyzed projects that have offered digital inheritance solutions in the past, such as PassOn, DigiPulse, and TrustVerse, based on the research, only two digital inheritance solutions exist - Vault12 and SafeHaven [67].
+VAULT12
+Vault12 is a digital inheritance platform that enables users to securely store and transfer digital assets, such as cryptocurrency and NFTs, to a designated beneficiary. Vault12’s solution also allows users to store digital information, such as passwords, bank accounts, documents, and photos [68]. In addition, by using a combination of multi-signature technology, Vault12 ensures that assets are securely transferred to a designated beneficiary upon the user's death or incapacitation.
+SAFEHAVEN
+SafeHaven is a platform that provides individuals with an innovative way to protect and manage their digital assets in the event of death, disability, or other life-changing events. SafeHaven has developed a solution called Inheriti that enables users to securely store, share, and transfer their digital assets to their heirs. Schouppe [69] patented the AES 256 cryptographic key encryption SafeHaven’s solutions are built upon and leverage the VeChain blockchain Proof of Authority consensus mechanism.
+In expanding outside of the VeChain ecosystem, SafeHaven looks to introduce its solutions to users across Ethereum Virtual Machine (EVM)-compatible blockchains [54]. As projects outside the Ethereum ecosystem, such as Moonbeam within the Polkadot ecosystem, are building EVM solutions for non-native EVM blockchains, this approach may provide more users with digital inheritance solutions [70]. Furthermore, given the ultimate goal of interoperability for various blockchain projects, using EVMs to bridge solutions such as Inheriti into different blockchain ecosystems may increase the awareness of digital inheritance offerings.
+
+CASE STUDY
+In order to demonstrate a proposed solution for a digital inheritance framework, a case study methodology was selected. In analyzing different methodologies, one reason for proposing a case study for using the social recovery pallet for digital inheritance is that it allows for exploring the unique characteristics and potential challenges of the specific context in which the pallet will be used. Also, a case study can be useful for generating recommendations and best practices for using the social recovery pallet in other contexts, as developers and users can be interviewed during the data collection and exploration process [71]. Using a case study approach and carefully examining the functionality of the social recovery pallet, the researchers hope that the proposed solution can lead to future implementations within and outside the Polkadot and Kusama ecosystems.
+
+SUBSTRATE
+In constructing the digital inheritance lego within the Polkadot and Kusama ecosystems, the proposed solution will be built upon the Substrate framework. The Substrate framework is a modular platform that allows developers to build custom blockchain applications similar to templates in other technological solutions [72]. Pallets are self-contained units of code that provide specific functionality to the blockchain, such as governance, staking, or consensus [72]. Developers can choose from a wide range of pre-built pallets or create their own custom pallets to add specific features to their blockchain [74]. This modular design enables developers to easily customize their blockchains and add or remove features as needed.
+In the Polkadot and Kusama ecosystems, pallets are implemented as WebAssembly (Wasm) modules that are compiled and uploaded onto the blockchain [18]. The Substrate pallets are compiled Wasm code, which can be executed by the network runtime.
+
+Pallets can be grouped into three categories:
+
+Core pallets: Core pallets are the fundamental building blocks of the network, providing the necessary infrastructure for consensus, networking, and other critical functions.
+Runtime pallets: Runtime pallets are the pallets that provide the core functionality of the network, such as smart contract execution, governance, and staking.
+Application pallets: Application pallets are the pallets that enable the development of specific dApps or use cases, such as financial services, supply chain management, or prediction markets [75].
+
+Substrate pallets have a wide range of potential uses and benefits in the context of the Polkadot and Kusama networks. For example, pallets have previously been created to develop decentralized governance models and create decentralized identity systems [76]. In the next section of this case study, we will explore an additional use case for the social recovery pallet to develop a digital inheritance plan for users within the Polkadot and Kusama ecosystems.
+THE SOCIAL RECOVERY PALLET
+Natively, similar to social recovery wallets previously mentioned, the social recovery pallet enables users on Substrate blockchains to be able to recover accounts in the event that he or she loses a password, private key, and their seed phrase. As decentralized blockchain protocols should not be able to retrieve an individual’s private key, the social recovery pallet creates a new key and makes calls on behalf of one's last account to a new account for one's assets to be retrieved [77]. Fig. 1 provides an overview of the social recovery process. 
+The process includes an individual’s existing account, where he or she will set up a createRecovery process that uses an M-of-N recovery tool. M-of-N is a multi-sig process where the user will identify a defined number of trustees - referred to as friends in the case of the social recovery pallet - that need to approve the recovery process to recover the account [77]. In developing a new use case for the social recovery pallet, the process is viewed through a digital inheritance lens moving forward. 
+DIGITAL INHERITANCE PLANNING
+The first step in developing a digital inheritance strategy would be to set up a recovery configuration. In the configuration, a testator may work with a digital executor - who may also be set up as a friend - to identify the number of friends that would be added to the M-of-N tool [78]. The ‘M’ would be the number of friends or beneficiaries the testator trusts, whereas the ’N’ would be the threshold of users that must confirm the testator's death. For example, if the testator identified five friends he or she trusted to be gatekeepers of the account, three of them would have to approve the transaction for the delay period to begin. 
+For the native social recovery pallet, the holder sets the delay period to identify how long one would have to wait until the account could be recovered. In the case of setting up a digital inheritance plan, the testator could work with the digital executor to identify how long the beneficiaries would have to wait until the digital assets are transferred [79]. The delay period also provides an additional layer of security against social engineering attacks as the testator could identify malicious actors attempting to access his or her account during life. In this use case, given that the testator may be holding large amounts of assets in the account to be recovered, they may work with their digital executor to set a higher delay period.
+Once the testator has set up the recovery configuration, they will be required to deposit KSM on the Kusama blockchain or DOT on the Polkadot blockchain to put the data on-chain. Additionally, upon death, the digital executor or a trustee - or friend - would have to issue a deposit to initiate the social recovery process. The deposit to initiate the social recovery process could also be deemed a security measure or a honeypot as if a malicious actor submits a deposit to begin the social recovery process, the testator or the digital executor could identify this attack and call the closeRecovery function to stop the process and receive the deposit.
+EXECUTING THE DIGITAL INHERITANCE PROCESS ON POLKADOT AND KUSAMA
+Upon the testator’s death, the digital executor could submit a deposit to initiate the social recovery process by calling the initateRecovery option. The digital executor could then contact all friends linked to the social recovery account to submit a vouchRecovery transaction [80]. Once the threshold set up during the M-of-N process has been reached and the delay period has passed, the digital executor would be able to access the digital assets from the old account and distribute the assets per the wishes of the testator through the claimRecovery process.
+Once assets have been recovered from the old account, the closeRecovery process can be called, allowing the digital executor to recover the deposit needed to initiate the social recovery process. After all assets have been moved to the new account, the digital executor can call the removeRecovery option to remove the configuration and connection between the new account and the old account and make any further transactions or assets unrecoverable.
+Although this is the proposed solution for setting up a digital inheritance plan, if a testator did not perform the recovery configuration, the developers of the social recovery pallet included an additional failsafe. In the event that the digital executor does not receive enough signatures on the vouchRecovery transaction from friends of the testator, the digital executor could go through the Polkadot or Kusama council or initiate a public proposal to use the Root origin to access the digital assets of the testator [79]. As this process would provide additional levels of complexity and the risk of attracting malicious actors, the proposed solution to develop a digital inheritance plan could provide the security and safety of digital assets that testators may expect.
+LIMITATIONS TO THE NATIVE SOCIAL RECOVERY PALLET FOR DIGITAL INHERITANCE
+While transparency across blockchain networks provides benefits in some use cases, it could attract unwanted attention in the case of digital inheritance. As the addresses of friends are currently public for the social recovery pallet, developers could modify the existing pallet to create an obfuscation layer to provide additional security. Given that users could create decentralized identities (DIDs) within the Polkadot and Kusama ecosystems using services offered by projects such as Latently, Kilt, and Ontology [19], [59], digital executors and friends could be easily identifiable. In addition to external threats from malicious actors, if a testator did not want the selected friends to know others’ identities, the current architecture of the social recovery pallet could allow friends to collaborate to initiate the social recovery process without the testator’s or the digital executor’s permission.
+In the event that a testator's friends were to collude against the testator, if the testator did not periodically check to see if the social recovery process was initiated, current state, he or she would be unaware of any malicious acts [77]. Suppose a notification system was created to send alerts to the testator and the digital executor with preset reminders until on-chain action is taken. In that case, this addition could mitigate the risk of collusion.
+Finally, the digital assets are not automatically transferred once a digital executor has accessed the old account and linked it to the new account. Currently, the new account is simply performing a call to the old account, and once all assets are removed from the old account, the removeRecovery function is called to remove the link between the two accounts. If a function was created within the social recovery pallet to transfer all assets using one function, this function might increase the intuitiveness of the pallet.
+THE DETERMINATION AND IMPLEMENTATION OF THE DECEASED’S WISHES (THE DIGITAL WILL)
+Traditional estate planning instruments - such as wills and trusts - are not designed to address the transfer of digital assets. These instruments may provide instructions for the transfer of physical property, but they need to account for the complexities of digital property [81]. To ensure that digital assets are effectively transferred, individuals must create updated estate planning documents that include specific instructions for managing digital property [82]. These instruments should identify the types of digital assets owned by the individual, provide instructions for the transfer of digital assets, and name a digital executor to manage the digital estate [83].
+
+FUTURE RESEARCH CONSIDERATIONS
+Despite the proposed solution to leverage the social recovery pallet within the Polkadot and Kusama ecosystems for digital inheritance planning, effective ways to educate users and legal teams on this use case may require further research. Additionally, with the advancements in other technologies, such as artificial intelligence and quantum computing, the following topics may also require further investigation:
+INCLUSION OF ADDITIONAL DIGITAL ASSETS
+While Web3 native assets such as cryptocurrencies and NFTs can be easily stored in decentralized accounts and vaults, there is still a gap in the research as to how Web2 native assets such as social media accounts, content, and passwords can be stored. Phala Network within the Polkadot and Kusama ecosystems has developed external storage services using centralized tools such as Amazon S3 and decentralized tools such as Storj, Arweave, and Filecoin [84]. However, additional research may be required regarding the security concerns and accessibility of storing different types of assets in a digital inheritance account and creating a type of pointer to those assets.
+INTEROPERABILITY
+Interoperability is a common topic of discussion regarding Web3 and blockchain, but how will tools created for active accounts impact digital inheritance accounts? Additional research may be required to assess the feasibility of an account aggregator injecting digital assets from other blockchains once a social recovery process is initiated. For example, if a digital executor initiated the social recovery process, given the potential interoperability properties of the Polkadot and Kusama ecosystems, is it feasible for a social recovery pallet to perform calls to pre-defined wallet addresses on the Bitcoin, Ethereum, Avalanche, and Binance blockchains to transfer assets the social recovery account set up by the testator?
+ONBOARDING ATTORNEYS TO ESTABLISH LEGAL FRAMEWORKS
+As technology has grown, so have the legal issues surrounding digital inheritance. As a result, attorneys and digital executors can play a crucial role in helping individuals and families establish a digital inheritance strategy. They can also assist in developing more explicit and more defined legal frameworks centered around digital assets.
+INCREASED SECURITY FOR SOCIAL RECOVERY ACCOUNTS AND VAULTS
+As awareness of users leveraging social recovery accounts for digital inheritance continues to grow, increased security measures may need to be implemented to prevent threats that may emerge in the future. To validate this point, The U.S. Secretary of Homeland Security, Alejandro Mayorkas, stated that leaders of organizations should be preparing now for the future threat of quantum computers [85]. While the National Institute of Standards and Technology (NIST) is currently developing post-quantum cryptography standards, the U.S. Cybersecurity and Infrastructure Security Agency (CISA) has developed a roadmap that leaders of organizations should follow in the near term [86]. However, as there is currently no consensus as to whether quantum computing may be a threat to blockchains soon, further research may need to be performed on the topic.
+Additionally, as organizations such as Apple have been using secure enclaves in the organization’s mobile solutions, additional research may need to be conducted to understand whether additional layers of security should be introduced. Also referred to as trusted execution environments (TEEs), secure enclaves can be used to store cryptographic keys, protect sensitive data from unauthorized access, and enable secure remote attestation [87]. With biometric authentication providing an additional security layer during one’s life, secure enclaves may need to be considered to counter future threats once someone passes away.
+A DIGITAL INHERITANCE LEGO FRAMEWORK
+Similar to how DeFi legos were built from existing protocols and dapps to create new protocols and solutions, additional research may be required to integrate a number of tools discussed in this study, such as SBTs, social recovery wallets, vaults, secure enclaves, Zk-proofs, and smart contracts. In addition, given these solutions exist across a number of blockchain ecosystems, composability among these applications may also need to be considered.
+
+ACKNOWLEDGEMENT
+The authors would like to thank Joshua Waller, Ray Lu, and the other team members from Phala and Bit.Country from the Polkadot and Kusama ecosystems for their thoughts and input into this study. The authors would also like to thank Charlotte McCurdy of Perley-Robertson, Hill & McDougall for providing input from a legal aspect on digital asset inheritance. 
+
+CONCLUSION
+The findings from this study have important implications for individuals and those involved in managing digital assets after one's death. First, the findings suggest that individuals are beginning to understand the importance of adding Web2-native digital assets into their inheritance plans, but further education must take place for individuals, digital executors, and policymakers regarding Web3-native digital assets. Second, the findings suggest that although the study focused on the Polkadot and Kusama ecosystems, digital inheritance lego frameworks and SBT structures may be considered in other protocols to enable the composability and interoperability of integrating Web2 and Web3 digital assets using some aggregation approach. Finally, the study highlights the importance of understanding the motivations for digital inheritance. This understanding can inform effective strategies for managing digital assets after a person’s death as the decentralized Web3 environment continues to evolve.
+REFERENCES
+[1] H. R. Hasan and K. Salah, "Proof of delivery of digital assets using 
+blockchain and smart contracts," IEEE Access, vol. 6, pp. 		
+65439-65448, Oct. 2018, doi: 10.1109/access.2018.2876971.
+[2] A. Berlee, "Digital inheritance in the Netherlands," J. Eur. Consumer 
+& Mkt. L., vol. 6, pp. 256-260, 2017.
+[3] J. H. Brown, "Online tools under RUFADAA: The next evolution in 
+estate planning or a flash in the pan," Prob. & Prop., vol. 33, pp. 
+60-63, Apr. 2019.
+[4] G. S. Saidakhrarovich, "Digitalization in inheritance law," World 	
+Bull. Manage. Law, vol. 10, pp. 18-30, 2022.
+[5] A. Candan and H. I. Yaşlak, "Fikhin kri̇pto paralara bakişi: 	
+Bitcoin örneği̇," Van İlahiyat Dergisi, vol. 9, no. 15, pp. 1-39, Dec. 
+2021, doi: 10.54893/vanid.985317.
+[6] S. Khanum and K. Mustafa, "A systematic literature review on 
+sensitive data protection in blockchain applications," Concurrency 
+Computat.: Pract. Exper., vol. 35, no. 1, pp. e7422, Dec. 2022, 
+doi: 10.1002/cpe.7422.
+
+[7] J. P. Njui, “$500 million in Ripple (XRP) possibly lost forever after 
+billionaire owner dies unexpectedly,” Apr. 2018. [Online] Available: 
+https://ethereumworldnews.com/500-million-in-ripple-xrp-possibly-
+lost-forever-after-billionaire-owner-dies-unexpectedly/.
+[8] Cremation Institute, “Cryptocurrency Estate Planning Study,” Jul. 
+2020. [Online] Available: https://cremationinstitute.com/crypto-
+estate-planning-study/.
+[9] S. Lee et al., Factors associated with having a will, power of 
+attorney, and advanced healthcare directive in patients presenting to 
+a rural and remote memory clinic.," Can. J. Neurol. Sci., vol. 46, no. 
+3, pp. 319-330, Mar. 2019, doi: 10.1017/cjn.2019.10.
+[10] R. Wilson, "AB 633: Protecting family property from unscrupulous 
+developers and real estate speculators," Univ. Pacific Law Rev., vol. 
+53, no. 2, pp. 272-286, 2022.
+[11] T. J. Chaffer and J. L. Goldston, "On the existential basis of self-
+sovereign identity and soulbound tokens: An examination of the 'self' 
+in the age of web3," J. Strateg. Innov. Sustain., vol. 17, no. 3, pp. 
+1-9, Nov. 2022.
+[12] T. Pyszczynski, S. Solomon, and J. Greenberg, "On the unique 
+psychological import of the human awareness of mortality: Theme 
+and variations," Psychol. Inquiry, vol. 17, no. 4, pp. 328-356, Nov. 
+2006, doi: 10.1080/10478400701369542.
+[13] B. Sasso, "Digital Due Process: The government's unfair advantage 
+under the Stored Communications Act," Va. J. Crim. L., vol. 8, pp. 
+36-62, 2020.
+[14] A. J. Hirsch. "Technology adrift: In search of a role for electronic 
+wills." BCL Rev., vol. 61, 2020, pp. 828-903.
+[15] P. Sheridan, "Inheriting digital assets: Does the Revised Uniform 
+Fiduciary Access to Digital Assets Act fall short?" Ohio St. Tech. LJ, 
+vol. 16, pp. 363-394, 2020.
+[16] U. Rahardja, A. N. Hidayanto, P. O. H. Putra, and M. Hardini, 
+"Immutable ubiquitous digital certificate authentication using 
+blockchain protocol," J. Appl. Res. Technol., vol. 19, no. 4, pp. 
+308-321, Aug. 2021, doi: 10.22201/icat.24486736e.2021.19.4.1046.
+[17] R. Tsepeleva and V. Korkhov, "Building DeFi applications using 
+cross-blockchain interaction on the wish swap platform," Comput., 
+vol. 11, no. 6, pp. 99, Jun. 2022, doi: 10.3390/computers11060099.
+[18] G. Wood, "Polkadot: Vision for a heterogeneous multi-chain 
+framework," White Paper, 2016.
+[19] B. Teisserenc and S. M. Sepasgozar, "Software architecture and non-
+fungible tokens for digital twin decentralized applications in the built 
+environment," in Buildings, vol. 12, no. 9, pp. 1447, Sep. 2022, doi: 
+10.3390/buildings12091447.
+[20] V. S. Anoop and J. Goldston, "Decentralized finance to hybrid 
+finance through blockchain: A case-study of Acala and Current," J. 	
+Bank. Fin. Technol., vol. 6, pp. 109-115, Apr. 2022, doi: 10.1007/
+s42786-022-00041-0.
+[21] T. Hewa, M. Ylianttila, and M. Liyanage, "Survey on blockchain 
+based smart contracts: Applications, opportunities and challenges," J. 
+Network Comput. Appl., vol. 177, pp. 102857, Mar. 2021, doi: 
+10.1016/j.jnca.2020.102857.
+[22] E. G. Weyl, P. Ohlhaver, and V. Buterin, "Decentralized society: 
+Finding web3’s soul,” May 2022. [Online] 
+Available: https://papers.ssrn.com/sol3/papers.cfm?
+abstract_id=4105763.
+[23] F. Valeonti, A. Bikakis, M. Terras, C. Speed, A. Hudson-Smith, and 
+K. Chalkias, "Crypto collectibles, museum funding and 
+OpenGLAM: Challenges, opportunities and the potential of Non-
+Fungible Tokens (NFTs)," Appl. Sci., vol. 11, no. 21, pp. 1-19, Oct. 
+2021, doi: 10.3390/app11219931.
+[24] W. K. Härdle, C. R. Harvey, and R. C. Reule, "Understanding 
+cryptocurrencies," J. Fin. Econ., vol. 18, no. 2, pp. 181-208, Feb. 
+2020.
+[25] P. Dunphy and F. A. Petitcolas, "A first look at identity 
+management schemes on the blockchain," IEEE Sec. Priv., vol. 16, 
+no. 4, pp. 20-29, 2018, doi: 10.1109/msp.2018.3111247.
+[26] A. Mühle, A. Grüner, T. Gayvoronskaya, and C. Meinel, "A survey 
+on essential components of a self-sovereign identity," Comp. Sci. 
+Rev., vol. 30, pp. 80-86, Nov. 2018, doi: 10.1016/
+j.cosrev.2018.10.002.
+
+
+[27] A. Battah, M. Madine, I. Yaqoob, K. Salah, H. R. Hasan, and R. 
+Jayaraman. "Blockchain and NFTs for trusted ownership, trading, 
+and access of AI models." IEEE Access, vol. 10, pp. 112230-112249, 
+Oct. 2022. doi: 10.1109/access.2022.3215660.
+[28] M. Kansal, A. K. Singh, and R. Dutta, "Efficient multi-signature 
+scheme using lattice," Comput. J., vol. 65, no. 9, pp. 2421-2429, 
+May 2022, doi: 10.1093/comjnl/bxab077.
+[29] C. Shaik, “Securing cryptocurrency wallet seed phrase digitally with 
+bling key encryption,” Int. J. Cryptography and Information Security 
+(IJCIS), vol. 10, no. 4, pp. 1-10, Dec. 2020, doi: 10.5121/
+ijcis.2020.10401.
+[30] C. Smyth and K. Peiros, "An international will or a will in each 
+jurisdiction?," LSJ Law Soc. N.S.W. J., vol. 34, pp. 78-79, 2017.
+[31] J. S. Kharitonova, “Digital assets and digital inheritance,” Law & 
+Dig. Tech., vol. 1 no. 4, pp. 19-26, Feb. 2021, doi: 10.18254/
+S123456780015732-6.
+[32] I. D. Motsi-Omoijiade, "Financial intermediation in cryptocurrency 
+markets–regulation, gaps and bridges," in Handbook of Blockchain, 
+Digital Finance, and Inclusion, vol. 1, pp. 207-223, Academic Press, 
+2018.
+[33] D. Browne and N. Darcy, "Wills and estates: Digital records and 
+estate planning," LSJ: Law Soc. J., vol. 66, pp. 82-83, May 2020.
+[34] M. B. Leslie, "Common law, common sense: Fiduciary standards and 
+trustee identity," Cardozo L. Rev., vol. 27, pp. 2713-2737, 2005.
+[35] V. Buterlin, "Why we need wide adoption of social recovery 
+wallets," Jan. 2021. [Online] 
+Available: https://vitalik.ca/general/2021/01/11/recovery.html.
+[36] N. Sun, Y. Zhang, and Y. Liu, "A privacy-preserving KYC-compliant 
+identity scheme for accounts on all public blockchains," 
+Sustainability, vol. 14, no. 21, pp. 1-18, Nov. 2022, doi: 10.3390/
+su142114584.
+[37] G. Gross, K. Lorek, and F. Richter, "Attitudes towards inheritance 
+taxation–results from a survey experiment," J. Econ. Inequal., vol. 
+15, no. 1, pp. 93-112, 2017, doi:10.1007/s10888-016-9344-4.
+[38] R. Soltani, U. T. Nguyen, and A. An, "A survey of self-sovereign 
+identity ecosystem," Sec. Commun. Networks, vol. 2021 pp. 
+1-26, Jul. 2021, doi:10.1155/2021/8873429.
+[39] A. Satybaldy, M. Nowostawski, and J. Ellingsen, "Self-sovereign 
+identity systems," in Proc. IFIP Int. Summer Sch. Privacy Identity 
+Management, Springer, Cham, pp. 447-461, Aug. 2019.
+[40] M. Shuaib, S.M. Daud, and S. Alam, "Self-sovereign identity 
+framework development in compliance with Self sovereign Identity 
+principles using components," Int. J. Mod. Agric., vol. 10, no. 2, pp. 
+3277-3296, 2021.
+[41] A. Acker, "Data craft: The manipulation of social media metadata," 
+D&S Res. Inst., vol. 13, no. 1, pp. 1-26, 2018.
+[42] K. Weller and K. E. Kinder-Kurlanda. "A manifesto for data sharing 
+in social media research." In Proc. of the 8th ACM Conf. on Web 
+Science, pp. 166-172, May 2016, doi: 10.1145/2908131.2908172.
+[43] B. Guidi, "When blockchain meets online social networks," Perv. 
+Mob. Comput., vol. 62, pp. 101131, Feb. 2020, doi: 10.1016/
+j.pmcj.2020.101131.
+[44] Y. K. Lee, and J. Jeong, "Securing biometric authentication system 
+using blockchain," ICT Express, vol. 7, no. 3, pp. 322-326, Sep. 
+2021, doi:10.1016/j.icte.2021.08.003.
+[45] J. O. Chervinski, J. Yu, and X. Xu, "Characterizing blockchain 
+interoperability systems from an architecture perspective," in Int. 
+Summit Smart City 360°, Springer, Cham, 2022, pp. 504-520.
+[46] F. Emmert, "Cryptocurrencies: The impossible domestic law 
+regime?," in The Am. J. Comp. Law, vol. 70, no. Supplement_1, pp. 
+i185-i219, Sep. 2022, doi: 10.1093/ajcl/avac022.
+[47] I. N. Sehati, "Beyond the grave: A fiduciary's access to a decedent's 
+digital assets," Cardozo L. Rev., vol. 43, pp. 745-782, 2021.
+[48] A. Alhosseini, R. Bin Tareaf, P. Najafi, and C. Meinel, "Detect me if 
+you can: Spam bot detection using inductive representation.
+learning," in Comp. Proceedings of The 2019 World Wide Web Conf., 
+pp. 148-153, May 2019, doi: 10.1145/3308560.3316504.
+[49] M. Orabi, D. Mouheb, Z. Al Aghbari, and I. Kamel, "Detection of 
+bots in social media: A systematic review," Inf. Process. Manage., 
+vol. 57, no. 4, pp. 102250, Jul. 2020, doi: 10.1016/
+j.ipm.2020.102250.
+
+[50] P. Alikhani, N. Brunner, C. Crépeau, S. Designolle, R. Houlmann, W. 
+Shi, and H. Zbinden, "Experimental relativistic zero-knowledge 
+proofs," Nature, vol. 599, no. 7883, pp. 47-50, Nov. 2021, doi: 
+10.1038/s41586-021-03998-y.
+[51] D. Tayouri, "The human factor in the social media security–
+combining education and technology to reduce social engineering 
+risks and damages." Procedia Manuf., vol. 3, pp. 1096-1100, 2015, 
+doi:10.1016/j.promfg.2015.07.181.
+[52] S. N. H. Zulkiffli, M. N. A. Zawawi, and F. A. Rahim, "Passive and 
+active reconnaissance: A social engineering case study," in 2020 8th 
+Int. Conf. on Information Technology and Multimedia (ICIMU), pp. 
+138-143, Aug. 2020, doi: 10.1109/icimu49871.2020.9243402.
+[53] V. Diamantopoulou, A. Androutsopoulou, S. Gritzalis, and Y. 
+Charalabidis, "An assessment of privacy preservation in 
+crowdsourcing approaches: Towards GDPR compliance," in 2018 
+12th Int. Conf. Res. Challenges Information Sci. (RCIS), May 2018, 
+pp. 1-9, doi: 10.1109/rcis.2018.8406643.
+[54] Digital Assets Daily, "Interview with Tyler Doussan from Safe 
+Haven (SHA)," Mar. 11, 2022. [Online]
+Available: https://www.youtube.com/watch?v=RrBESAKm0Hk.
+[55] S. Kopf, "Rewarding good creators": Corporate social media 
+discourse on monetization schemes for content creators, Soc. 
+Media+Soc., vol. 6, no. 4, pp. 1-12, Nov. 2020,
+doi:10.1177/2056305120969877.
+[56] F. Béres, I. A. Seres, A. A. Benczúr, and M. Quintyne-Collins, 
+"Blockchain is watching you: Profiling and deanonymizing 
+Ethereum users," in Proc. 2021 IEEE Int. Conf. Decentralized 
+Applications and Infrastructures (DAPPS), pp. 69-78, Oct. 2020, 
+doi: 10.1109/dapps52256.2021.00013.
+[57] van Rijmenam, M. (2022). Step into the Metaverse: How the 
+Immersive Internet Will Unlock a Trillion-Dollar Social Economy, 
+2022. John Wiley & Sons.
+[58] M. Manolache, S. Manolache, and N. Tapus, "Decision making using 
+the blockchain proof of authority consensus," in Proc. Comp. Sci., 
+vol. 199, 2022, pp. 580-588, 2022, doi:10.1016/j.procs.2022.01.071.
+[59] A. Thomas, R. Ramaguru, and M. Sethumadhavan, "Distributed 
+identity and verifiable claims using Ethereum standards," in 
+Invent. Commun. Comput. Technol.”, Springer, Singapore, pp. 
+621-636, Jan. 2022, doi:10.1007/978-981-16-5529-6_48.
+[60] R. Flunger, A. Mladenow, and C. Strauss, "Game analytics-
+business impact, methods, and tools," in Developments in Info. & 
+Knowl. Manag. for Bus. Appl., Springer, Cham, pp. 601-617, 
+Aug. 2021, doi:10.1007/978-3-030-77916-0_19 .
+[61] V. Buterin, "Soulbound,” Jan. 2022. [Online]
+Available: https://vitalik.ca/general/2022/01/26/soulbound.html.
+[62] M. Ferdous, F. Chowdhury, and M. O. Alassafi, "In search of self-
+sovereign identity leveraging blockchain technology," IEEE Access, 
+vol. 7, pp. 103059-103079, 2019, doi:10.1109/access.2019.2931173.
+[63] C. K. N. Chun, S. Y. Park, and M. S. Kim, "Understanding 
+decentralized autonomous organizations (DAOs) as a reaction to
+corporate governance problems," Smatoos Bus. Rev., vol. 1, pp. 
+1-12, 2022.
+[64] Oli, "DeQuest goes into partnership with RMRK,” Aug. 2022. 
+[Online] Available: https://medium.com/.
+dequest/dequest-goes-into-partnership-with-rmrk-6746a4ac8108.
+[65] Y. Xue and J. Wang. "Design of a blockchain-based traceability 
+system with a privacy-preserving scheme of zero-knowledge 
+proof." Sec. Commun. Networks, vol. 2022, pp. 1-12, Jun. 2022, 
+doi:10.1155/2022/5842371.
+[66] P. Zaleppa and A. Dudley, "Ethical, legal and security implications 
+of digital legacies on social media," in Proc. Int. Conf. Human-
+Computer Interact., Springer, Cham, Jul. 2020, pp. 419-429, 
+doi:10.1007/978-3-030-49570-1_29.
+[67] R. Singh, A. Shrivastava, and S. Ruj, "A digital asset inheritance 
+model to convey online persona posthumously," Int. J. Inf. Secur., 
+vol. 1, pp. 1-21, Apr. 2022 doi:10.1007/s10207-022-00593-8.
+[68] M. Skibinsky, Y. Dodis, T. Spies, and W. Ahmad, "Decentralized 
+storage of crypto assets via hierarchical Shamir’s secret sharing," 
+Vault12 Whitepaper, 2018. [Online] Available: http://
+vault12.s3.amazonaws.com/Vault12+Platform+White+Paper.pdf.
+[69] J. Schouppe, “Methods and systems for cryptographic private key 
+management for secure multiparty storage and transfer of 
+information,” U.S. Patent 11 316 668, Apr. 26, 2022.
+
+[70] R. Jia and S. Yin. "To EVM or not to EVM: Blockchain 
+compatibility and network effects." In Proceedings of the 2022 
+ACM CCS Workshop on Decentralized Finance and Security, pp. 
+23-29, Nov. 2022, doi:10.1145/3560832.3563442.
+[71] P. Shrestha and P. C. Bhattarai, "Application of case study 
+methodology in the exploration of inclusion in education," Am. J. 
+Qualitative Res., vol. 6, no. 1, pp. 73-84, 2021, doi: 10.29333/ajqr/
+11461.
+[72] G. Wood, “Substrate and Polkadot,” Accessed Dec. 31, 2022. 
+[Online] Available: https://substrate.io/vision/substrate-and-
+polkadot/.
+[73] S. Johnson, P. Robinson, and J. Brainard, "Sidechains and 
+interoperability," Mar. 2019. [Online]
+Available: https://arxiv.org/pdf/1903.04077.pdf.
+[74] H. Abbas, M. Caprolu, and R. Di Pietro, "Analysis of Polkadot: 
+Architecture, internals, and contradictions," in 2022 IEEE 
+International Conference on Blockchain, pp. 61-70, Aug. 2022.
+[75] J. Burdges et al., "Overview of Polkadot and its design 
+considerations," May 2020, [Online] Available: https://arxiv.org/pdf/
+2005.13456.pdf.
+[76] I. Scott, M. de Castro Neto, and F. L. Pinheiro, “Bringing trust and 
+transparency to the opaque world of waste management with 
+blockchain: A Polkadot parathread application,” Apr. 2021. [Online] 
+Available at: https://ssrn.com/abstract=3825072.
+[77] S. Tabriz, “Substrate Recovery Pallet - Shawn Tabrizi,” Dec. 2020. 
+[Online] Available: https://youtu.be/ZfhEAzRCFBc.
+[78] P. Lucsok, “Social recovery on Substrate,” Accessed Dec. 31, 2022. 
+Apr. 2020. Available: https://www.parity.io/blog/social-recovery-on-
+substrate/.
+[79] J. Petrowski and S. Tabriz, “Substrate Social Recovery Pallet Code 
+Walkthrough with Joe Petrowski and Shawn Tabrizi,” Dec. 2020. 
+[Online] Available: https://youtu.be/rRnWKDaTb9E.
+[80] K. Alfaro, “Social Recovery,” Dec. 2022. [Online] Available: https://
+guide.kusama.network/docs/kusama-social-recovery.
+[81] D. Horton, "Tomorrow's inheritance: The frontiers of estate planning 
+formalism," BCL Rev., vol. 58, pp. 539-597, 2017.
+[82] E. Stutts, "Will your digital music and e-book libraries die hard 
+with you: Transferring digital music and e-books upon death," 
+SMU Sci. & Tech. L. Rev., vol. 16, pp. 371-407, 2013.
+[83] I. Komarevceva, M. Melnichuk, O. Zhuravleva, I. Shulzhenko, and 
+G. Zakharova, "Development trends of inheritance law in the 
+context of the digital economy," in Bus. 4.0 as a Subject of the 
+Digit. Econ., Springer, Cham, pp. 953-957, 2022.
+[84] J. Waller, “Phat contract examples,” Oct. 2022. [Online] Available: 
+https://github.com/HashWarlock/phat-contract-examples/tree/master/
+examples/phat-s3.
+[85] L. Clinton, "Fixing American cybersecurity: Creating a strategic 
+public-private partnership," Georgetown Univ. Press, 2023.
+[86] B. Barker, M. Souppaya, and W. Newhouse, "Migration to post-
+quantum cryptography," NIST Natl. Inst. Stand. Technol. and Natl. 
+Cybersec. Cent. Excell., pp. 1-15, 2021 [Online] Available: https://
+www.nccoe.nist.gov/sites/default/files/legacy-files/pqc-migration-
+project-description-final.pdf.
+[87] C. Chen, Y. Zhang, and T. H. Lai, "Opera: Open remote attestation 
+for Intel's secure enclaves," in Proc. ACM SIGSAC Conf. Comput. 
+Commun. Sec., pp. 2317-2331, Nov. 2019, 
+doi:10.1145/3319535.3354220.
